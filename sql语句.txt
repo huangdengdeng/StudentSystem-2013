@@ -1,0 +1,25 @@
+use StudentSystem;
+/*
+*学生基本信息：姓名 学号 性别  学生院系  年级  专业  电话号码  入住时间  离开时间 宿舍楼号 宿舍房号 
+*/
+create table student(id int primary key  auto_increment,student_no varchar(30),student_name varchar(30),student_sex varchar(2),department varchar(30),grade varchar(30),professional varchar(30),phonenumber varchar(30),int_time varchar(30),out_time varchar(30),building_no varchar(30),dormitory_no varchar(30));
+/*
+*宿舍基本信息： 宿舍楼号 宿舍号   收费
+*/
+
+create table dormitory(id int primary key  auto_increment,building_no varchar(30),dormitory_no varchar(30),cost varchar(30));
+
+/*
+*宿管员基本信息:宿舍楼号 编号 宿管员姓名 密码
+*/
+ create table  employee(id int primary key auto_increment,building_no varchar(30) ,employee_no varchar(30) ,employee_name varchar(30),employee_ps varchar(30));
+
+/*
+*管理员信息： 管理员编号  姓名  密码   职称
+*/
+create table  admin(admin_id varchar(30) primary key,admin_name varchar(30) ,admin_ps varchar(30),title varchar(30)); 
+
+/*
+*晚归记录表： 学号 姓名  宿舍楼号  宿舍房号   晚归日期  
+*/
+create table  laterecord(student_no varchar(30) primary key,student_name varchar(30),building_no varchar(30),dormitory_no varchar(30),date varchar(30)); 
